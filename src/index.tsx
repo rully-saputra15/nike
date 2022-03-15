@@ -3,10 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import {ChakraProvider} from "@chakra-ui/react";
+import {extendTheme} from "@chakra-ui/react";
+import '@fontsource/lato/700.css';
+const theme = extendTheme({
+  fonts: {
+    body: 'Lato, sans-serif'
+  }
+})
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ChakraProvider theme={theme}>
+      <App />
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
